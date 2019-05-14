@@ -69,7 +69,7 @@ config :phoenix, :plug_init_mode, :runtime
 # Configure your database
 config :checkers, Checkers.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "qwertyAhuel",
   database: "checkers_dev",
   hostname: "localhost",
   pool_size: 10

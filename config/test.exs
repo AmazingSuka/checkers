@@ -12,7 +12,7 @@ config :logger, level: :warn
 # Configure your database
 config :checkers, Checkers.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "qwertyAhuel",
   database: "checkers_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
