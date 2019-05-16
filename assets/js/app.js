@@ -15,8 +15,19 @@ import "phoenix_html"
 //
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
+import socket from "./socket"
+
 window.onload = function () {
     //The initial setup
+    let channel = socket.channel("game:lobby")
+    channel.join()
+        .receive("ok", resp => {
+            console.log("Join Successfuly.", resp)
+        })
+        .receive("error", reason => {
+            console.log("Join failed.", reason)
+        })
+
     var gameBoard = [
         [0, 1, 0, 1, 0, 1, 0, 1],
         [1, 0, 1, 0, 1, 0, 1, 0],
@@ -322,6 +333,14 @@ window.onload = function () {
     $('#cleargame').on("click", function () {
         Board.clear();
     });
+    
+    $('#findgame').on("click", function () {
+        channel.push("find")
+    });
+
+    channel.on("find", (resp) => {
+        console.log(resp)
+    })
 
     //move piece when tile is clicked
     $('.tile').on("click", function () {

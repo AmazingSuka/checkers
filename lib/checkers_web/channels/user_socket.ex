@@ -3,7 +3,7 @@ defmodule CheckersWeb.UserSocket do
 
   ## Channels
   # channel "room:*", CheckersWeb.RoomChannel
-
+  channel "game:*", CheckersWeb.GameChannel
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
   # verification, you can put default assigns into

@@ -11,9 +11,10 @@ defmodule Checkers.Application do
       # Start the Ecto repository
       Checkers.Repo,
       # Start the endpoint when the application starts
-      CheckersWeb.Endpoint
+      CheckersWeb.Endpoint,
       # Starts a worker by calling: Checkers.Worker.start_link(arg)
       # {Checkers.Worker, arg},
+      CheckersWeb.Presence
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
