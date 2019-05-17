@@ -14,7 +14,8 @@ defmodule Checkers.Application do
       CheckersWeb.Endpoint,
       # Starts a worker by calling: Checkers.Worker.start_link(arg)
       # {Checkers.Worker, arg},
-      CheckersWeb.Presence
+      CheckersWeb.Presence,
+      Checkers.Search
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

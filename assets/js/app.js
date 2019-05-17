@@ -28,6 +28,16 @@ window.onload = function () {
             console.log("Join failed.", reason)
         })
 
+    channel.on("match_ready", (resp) => {
+        socket.channel(`game:${resp.lobby_individual_number}`).join()
+            .receive("ok", resp => {
+                console.log("Join to game lobby Successfuly.", resp)
+            })
+            .receive("error", reason => {
+                console.log("Join to game lobby failed.", reason)
+            })
+    })    
+
     var gameBoard = [
         [0, 1, 0, 1, 0, 1, 0, 1],
         [1, 0, 1, 0, 1, 0, 1, 0],
